@@ -343,3 +343,47 @@ footer small{opacity:.6;font-size:.78rem;display:block;margin-top:20px;line-heig
 .cta-band .tel{font-family:"Zen Maru Gothic";font-weight:900;font-size:2.1rem;margin:10px 0}
 .cta-band .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:18px}
 .bg-cream{background:var(--cream)}
+
+/* ===== enhanced sub-page components ===== */
+.badge-o{color:#2e8b57;font-weight:700}.badge-t{color:#d98a00;font-weight:700}.badge-x{color:#b04a4a;font-weight:700}
+.def-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.def{background:#fff;border-radius:16px;box-shadow:var(--shadow);padding:18px 22px}
+.def dt{font-family:"Zen Maru Gothic";font-weight:700;color:var(--teal);font-size:.92rem;margin-bottom:5px}
+.def dd{font-size:1.05rem;font-weight:500}
+.def dd small{color:var(--ink-soft);font-size:.8rem;font-weight:400;display:block;margin-top:2px}
+@media(max-width:620px){.def-grid{grid-template-columns:1fr}}
+/* timeline (1日の流れ) */
+.timeline{max-width:720px;margin:0 auto}
+.tl-item{display:flex;gap:14px;position:relative;padding-bottom:24px}
+.tl-time{flex:none;width:60px;font-family:"Zen Maru Gothic";font-weight:700;color:var(--teal);text-align:right;padding-top:4px;font-size:.95rem}
+.tl-line{flex:none;position:relative;width:22px;display:flex;justify-content:center}
+.tl-dot{width:15px;height:15px;border-radius:50%;background:var(--coral);margin-top:7px;z-index:1;box-shadow:0 0 0 4px var(--cream)}
+.tl-line::before{content:"";position:absolute;top:7px;bottom:-24px;width:3px;background:var(--cream-deep)}
+.tl-item:last-child{padding-bottom:0}.tl-item:last-child .tl-line::before{display:none}
+.tl-body{background:#fff;border-radius:14px;padding:13px 18px;box-shadow:var(--shadow);flex:1}
+.tl-body h4{font-family:"Zen Maru Gothic";font-weight:700;font-size:1rem;margin-bottom:2px}
+.tl-body p{font-size:.88rem;color:var(--ink-soft)}
+@media(max-width:560px){.tl-time{width:46px;font-size:.82rem}}
+/* voice cards (先生の声) */
+.voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.voice{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:26px 24px;position:relative;transition:transform .25s}
+.voice:hover{transform:translateY(-6px)}
+.voice .q{position:absolute;top:10px;right:20px;font-size:3rem;color:var(--cream-deep);font-family:Georgia,serif;line-height:1}
+.voice .who{display:flex;align-items:center;gap:12px;margin-bottom:13px}
+.voice .av{width:50px;height:50px;border-radius:50%;background:var(--sky);display:grid;place-content:center;font-size:1.5rem;flex:none}
+.voice .who b{font-family:"Zen Maru Gothic";display:block;font-size:.98rem}
+.voice .who span{font-size:.78rem;color:var(--ink-soft)}
+.voice p{font-size:.93rem;position:relative;z-index:1}
+@media(max-width:760px){.voice-grid{grid-template-columns:1fr}}
+/* season events */
+.season-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.season{background:#fff;border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+.season .hd{padding:11px;text-align:center;font-family:"Zen Maru Gothic";font-weight:700;color:#fff;font-size:1.02rem}
+.season.s1 .hd{background:#7FB069}.season.s2 .hd{background:#5BA6B1}.season.s3 .hd{background:#E8654E}.season.s4 .hd{background:#6E8CB0}
+.season ul{list-style:none;padding:14px 16px;font-size:.9rem}
+.season li{padding:5px 0;border-bottom:1px dashed var(--cream-deep)}
+.season li:last-child{border:none}
+@media(max-width:760px){.season-grid{grid-template-columns:repeat(2,1fr)}}
+/* mini stat band */
+.statline{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:8px}
+.statline span{background:#fff;border:1px solid var(--cream-deep);border-radius:999px;padding:.5em 1.2em;font-family:"Zen Maru Gothic";font-weight:700;color:var(--teal);font-size:.92rem}
