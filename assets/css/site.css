@@ -387,3 +387,36 @@ footer small{opacity:.6;font-size:.78rem;display:block;margin-top:20px;line-heig
 /* mini stat band */
 .statline{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:8px}
 .statline span{background:#fff;border:1px solid var(--cream-deep);border-radius:999px;padding:.5em 1.2em;font-family:"Zen Maru Gothic";font-weight:700;color:var(--teal);font-size:.92rem}
+
+/* ===== staff intro / gallery / forms ===== */
+.staff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.staff{background:var(--cream);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:transform .25s}
+.staff:hover{transform:translateY(-6px)}
+.staff .ph{aspect-ratio:4/3;overflow:hidden}
+.staff .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.staff:hover .ph img{transform:scale(1.06)}
+.staff .body{padding:20px 22px}
+.staff .role{display:inline-block;background:var(--leaf);color:#fff;font-family:"Zen Maru Gothic";font-weight:700;font-size:.76rem;border-radius:999px;padding:.2em .9em;margin-bottom:8px}
+.staff h3{font-size:1.18rem;font-weight:900;margin-bottom:8px}
+.staff h3 small{font-size:.8rem;color:var(--ink-soft);font-weight:400;margin-left:6px}
+.staff p{font-size:.9rem;color:var(--ink-soft)}
+@media(max-width:760px){.staff-grid{grid-template-columns:1fr}}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.gallery img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;transition:transform .4s}
+.gallery a:hover img{transform:scale(1.05)}
+@media(max-width:600px){.gallery{grid-template-columns:repeat(2,1fr)}}
+.form{max-width:680px;margin:0 auto;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:30px 30px 34px}
+.field{margin-bottom:16px}
+.field label{display:block;font-family:"Zen Maru Gothic";font-weight:700;font-size:.9rem;margin-bottom:6px}
+.field .req{color:#fff;background:var(--coral);font-size:.66rem;border-radius:4px;padding:.1em .5em;margin-left:8px;vertical-align:middle}
+.field input,.field select,.field textarea{width:100%;border:1.5px solid var(--cream-deep);border-radius:12px;padding:.7em 1em;font-family:inherit;font-size:1rem;outline:none;background:#fff;color:var(--ink)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--teal-light)}
+.field textarea{min-height:110px;resize:vertical}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:560px){.field-row{grid-template-columns:1fr}}
+.form .submit{text-align:center;margin-top:10px}
+.form-done{display:none;text-align:center;padding:24px 10px}
+.form-done.show{display:block}
+.form-done .ic{font-size:2.6rem}
+.form-done h3{font-family:"Zen Maru Gothic";font-size:1.3rem;margin:8px 0}
+.form-note{text-align:center;font-size:.76rem;color:var(--ink-soft);margin-top:14px}

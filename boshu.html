@@ -197,6 +197,57 @@
   </div>
 </section>
 
+<!-- 園のかんきょう -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="ja">園のかんきょう</span>
+      <span class="en">GALLERY</span>
+      <p>広い園庭、あたたかいお部屋、手づくり給食。ほいくの森の毎日をのぞいてみてください。</p>
+    </div>
+    <div class="gallery reveal">
+      <a href="https://www.instagram.com/kitamiotani/" target="_blank" rel="noopener"><img src="assets/photos/img_9525.jpg" alt="園庭での外あそび" loading="lazy"></a>
+      <a href="https://www.instagram.com/kitamiotani/" target="_blank" rel="noopener"><img src="assets/photos/img_0242.jpg" alt="お部屋での活動" loading="lazy"></a>
+      <a href="https://www.instagram.com/kitamiotani/" target="_blank" rel="noopener"><img src="assets/photos/571aa6d8-fa3e-4b47-8edc-5038ca798599-1.jpg" alt="外で給食" loading="lazy"></a>
+      <a href="https://www.instagram.com/kitamiotani/" target="_blank" rel="noopener"><img src="assets/photos/img_9206.jpg" alt="お絵かき" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<!-- 見学予約フォーム -->
+<section class="bg-cream" id="form">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="ja">見学予約・お問い合わせ</span>
+      <span class="en">CONTACT</span>
+      <p>下記フォーム・お電話・LINEからお気軽にどうぞ。1〜2営業日以内にご連絡します。</p>
+    </div>
+    <form class="form reveal" id="visitForm" novalidate>
+      <div class="form-fields">
+        <div class="field-row">
+          <div class="field"><label>保護者のお名前<span class="req">必須</span></label><input type="text" name="name" placeholder="例：大谷 花子" required></div>
+          <div class="field"><label>電話番号<span class="req">必須</span></label><input type="tel" name="tel" placeholder="例：090-1234-5678" required></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>メールアドレス</label><input type="email" name="email" placeholder="例：hanako@example.com"></div>
+          <div class="field"><label>お子さまの年齢</label>
+            <select name="age"><option value="">選択してください</option><option>0歳</option><option>1歳</option><option>2歳</option><option>3歳</option><option>4歳</option><option>5歳</option><option>未定・妊娠中</option></select>
+          </div>
+        </div>
+        <div class="field"><label>見学希望日（候補）</label><input type="text" name="date" placeholder="例：7月10日（水）午前 など"></div>
+        <div class="field"><label>ご質問・ご相談</label><textarea name="msg" placeholder="送迎エリア、空き状況、費用など、お気軽にどうぞ。"></textarea></div>
+        <div class="submit"><button type="submit" class="btn btn-coral">この内容で送信する</button></div>
+      </div>
+      <div class="form-done" id="visitDone">
+        <div class="ic">🌳</div>
+        <h3>送信ありがとうございます！</h3>
+        <p>担当より1〜2営業日以内にご連絡します。お急ぎの場合は 0157-36-2862 までお電話ください。</p>
+      </div>
+      <p class="form-note">＊これはプレビュー用のデモフォームです（実際には送信されません）。本番では園のメール・予約システム・LINEに接続します。</p>
+    </form>
+  </div>
+</section>
+
 <!-- CTA band -->
 <div class="cta-band">
   <div class="wrap">
@@ -236,6 +287,15 @@
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
   var hd=document.getElementById('hd');
   window.addEventListener('scroll',function(){hd.classList.toggle('scrolled',window.scrollY>20)},{passive:true});
+  var f=document.getElementById('visitForm');
+  if(f)f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=f.querySelector('[name=name]'),tel=f.querySelector('[name=tel]');
+    if(!name.value.trim()||!tel.value.trim()){alert('お名前と電話番号をご入力ください。');return;}
+    f.querySelector('.form-fields').style.display='none';
+    document.getElementById('visitDone').classList.add('show');
+    document.getElementById('form').scrollIntoView({behavior:'smooth'});
+  });
 })();
 </script>
 </body>
