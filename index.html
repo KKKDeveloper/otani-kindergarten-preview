@@ -3,8 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ▼ SEO試作: 本番ではこの noindex を外す（プレビュー中のみ検索除外） -->
 <meta name="robots" content="noindex, nofollow">
-<title>認定こども園 北見大谷幼稚園 ほいくの森｜リニューアル案（プレビュー）</title>
+<!-- 検索結果に出すタイトル/説明（「北見 幼稚園」「北見 こども園」を狙う） -->
+<title>北見の認定こども園 ほいくの森（北見大谷幼稚園）｜見学受付中</title>
+<meta name="description" content="北見市東相内の認定こども園「ほいくの森」。0歳から就学前まで、広い園庭での自然遊びと仏さまの心を大切にした保育。北見市内・近隣の町から送迎バスで通えます。見学はお電話・LINEで受付中。">
+<link rel="canonical" href="https://kitami-otani.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="認定こども園 北見大谷幼稚園 ほいくの森">
+<meta property="og:title" content="北見の認定こども園 ほいくの森｜0歳から・送迎バス・見学受付中">
+<meta property="og:description" content="北見市東相内の認定こども園。広い園庭での自然遊びと仏さまの心。北見市内・近隣の町から送迎バスで通えます。見学はお電話・LINEで受付中。">
+<meta property="og:url" content="https://kitami-otani.com/">
+<meta property="og:image" content="https://kitami-otani.com/ogp.jpg">
+<meta name="format-detection" content="telephone=no">
+<!-- 構造化データ（Google「リッチリザルト テスト」で検証可。ローカルSEO/MEO連動） -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Preschool",
+  "name": "認定こども園 北見大谷幼稚園 ほいくの森",
+  "alternateName": ["北見大谷幼稚園", "ほいくの森", "北見 認定こども園 ほいくの森"],
+  "description": "北海道北見市東相内の認定こども園。0歳から就学前まで、広い園庭での自然遊びと仏さまの心を大切にした保育を行っています。北見市内・近隣の町から送迎バスで通えます。",
+  "url": "https://kitami-otani.com/",
+  "telephone": "+81-157-36-2862",
+  "image": "https://kitami-otani.com/ogp.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "postalCode": "099-0878",
+    "addressRegion": "北海道",
+    "addressLocality": "北見市",
+    "streetAddress": "東相内町225-1",
+    "addressCountry": "JP"
+  },
+  "areaServed": ["北見市", "置戸町", "訓子府町", "端野"],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "09:00",
+    "closes": "17:00"
+  },
+  "sameAs": ["https://www.instagram.com/kitamiotani/"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"幼稚園・保育園・認定こども園の違いは？","acceptedAnswer":{"@type":"Answer","text":"認定こども園は幼稚園と保育園の機能をあわせ持ち、0歳から就学前まで通えます。共働きのご家庭もそうでないご家庭も利用できます。"}},
+    {"@type":"Question","name":"0歳から預けられますか？","acceptedAnswer":{"@type":"Answer","text":"はい。認定こども園のため0歳から就学前までお預かりします。0〜2歳は枠が限られるため早めのご相談がおすすめです。"}},
+    {"@type":"Question","name":"送迎バスはありますか？","acceptedAnswer":{"@type":"Answer","text":"4コースの送迎バスを運行しています。北見市内・近隣の町から、ご自宅近くまでお迎えにあがるコースもあります。"}},
+    {"@type":"Question","name":"見学はできますか？","acceptedAnswer":{"@type":"Answer","text":"はい。1組ずつ・所要30分ほどで見学いただけます。お電話（0157-36-2862）またはLINEでご予約ください。"}}
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
@@ -198,7 +250,8 @@ section{padding:78px 0}
 .step{background:#fff;color:var(--ink);border-radius:var(--radius);padding:32px 26px 28px;text-align:center;box-shadow:var(--shadow);position:relative;transition:transform .25s}
 .step:hover{transform:translateY(-6px)}
 .step .num{position:absolute;top:-18px;left:50%;transform:translateX(-50%);background:var(--coral);color:#fff;font-family:"Zen Maru Gothic";font-weight:900;width:42px;height:42px;border-radius:50%;display:grid;place-content:center;box-shadow:0 4px 0 #c14a36}
-.step .ic{font-size:2.4rem;margin:10px 0 8px}
+.step .ic{margin:6px auto 14px;width:68px;height:68px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center}
+.step .ic svg{width:40px;height:40px}
 .step h3{font-size:1.18rem;font-weight:900;margin-bottom:8px}
 .step p{font-size:.92rem;color:var(--ink-soft)}
 .steps-cta{text-align:center;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
@@ -460,19 +513,19 @@ footer small{opacity:.6;font-size:.78rem;display:block;margin-top:20px;line-heig
     <div class="step-grid">
       <div class="step reveal">
         <div class="num">1</div>
-        <div class="ic">📱</div>
+        <div class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#3E8A96" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 9h18a6 6 0 0 1 6 6v10a6 6 0 0 1-6 6h-9l-7 6v-6h-2a6 6 0 0 1-6-6V15a6 6 0 0 1 6-6z"/><circle cx="16" cy="20" r="1.9" fill="#3E8A96" stroke="none"/><circle cx="24" cy="20" r="1.9" fill="#E8654E" stroke="none"/><circle cx="32" cy="20" r="1.9" fill="#3E8A96" stroke="none"/></svg></div>
         <h3>LINE・電話で予約</h3>
         <p>LINEまたはお電話で、ご希望の日をお知らせください。質問だけでもOKです。</p>
       </div>
       <div class="step reveal d1">
         <div class="num">2</div>
-        <div class="ic">👀</div>
+        <div class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#3E8A96" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 23 24 10l17 13"/><path d="M12 22v17h24V22"/><path d="M20 39v-9a4 4 0 0 1 8 0v9"/><path d="M24 18c-1-1.5-3.8-1-3.8 1 0 1.7 2.3 2.7 3.8 3.9 1.5-1.2 3.8-2.2 3.8-3.9 0-2-2.8-2.5-3.8-1z" fill="#E8654E" stroke="none"/></svg></div>
         <h3>園を見学（約30分）</h3>
         <p>普段の保育の様子をご覧いただきます。お子さま連れで、遊んでいく子も多いです。</p>
       </div>
       <div class="step reveal d2">
         <div class="num">3</div>
-        <div class="ic">📝</div>
+        <div class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#3E8A96" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18h24a2 2 0 0 1 2 2v18a3 3 0 0 1-3 3H13a3 3 0 0 1-3-3V20a2 2 0 0 1 2-2z"/><path d="M17 18v-2a7 7 0 0 1 14 0v2"/><path d="M24 27c-1.1-1.7-4.2-1.1-4.2 1.1 0 1.9 2.6 3 4.2 4.4 1.6-1.4 4.2-2.5 4.2-4.4 0-2.2-3.1-2.8-4.2-1.1z" fill="#E8654E" stroke="none"/></svg></div>
         <h3>ゆっくり検討・入園</h3>
         <p>その場で決めなくて大丈夫。送迎・費用・空き状況など、納得いくまでご相談ください。</p>
       </div>
