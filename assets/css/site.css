@@ -113,7 +113,7 @@ header.scrolled{box-shadow:0 6px 22px rgba(74,64,54,.10)}
 /* floating doodles */
 .doodle{position:absolute;z-index:3;pointer-events:none}
 .d-sun{top:34px;right:5%;width:74px;animation:spin 26s linear infinite}
-.d-cloud{top:16%;left:4%;width:120px;opacity:.9;animation:floatx 14s ease-in-out infinite}
+.d-cloud{top:12%;right:18%;left:auto;width:118px;opacity:.92;animation:floatx 14s ease-in-out infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes floatx{0%,100%{transform:translateX(0)}50%{transform:translateX(26px)}}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
