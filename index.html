@@ -116,7 +116,7 @@ header.scrolled{box-shadow:0 6px 22px rgba(74,64,54,.10)}
 .hero-arrow:hover{background:rgba(255,255,255,.34)}
 .hero-arrow.prev{left:18px}.hero-arrow.next{right:18px}
 @media(max-width:860px){.hero-arrow{display:none}}
-.hero-scrolldown{position:absolute;z-index:4;bottom:22px;right:26px;color:#fff;font-size:.74rem;display:flex;flex-direction:column;align-items:center;gap:6px;opacity:.85}
+.hero-scrolldown{position:absolute;z-index:4;bottom:22px;left:26px;color:#fff;font-size:.74rem;display:flex;flex-direction:column;align-items:center;gap:6px;opacity:.85}
 .hero-scrolldown .line{width:1px;height:34px;background:#fff;position:relative;overflow:hidden}
 .hero-scrolldown .line::after{content:"";position:absolute;top:-34px;left:0;width:1px;height:34px;background:var(--sun);animation:scrolldn 1.8s ease-in-out infinite}
 @keyframes scrolldn{0%{top:-34px}60%,100%{top:34px}}
@@ -257,6 +257,40 @@ footer small{opacity:.6;font-size:.78rem;display:block;margin-top:20px;line-heig
 .hero-copy>*:nth-child(5){animation-delay:.85s}
 @keyframes heroIn{to{opacity:1;transform:none}}
 
+/* ===== AI chat widget (demo: 園ドキュメントからの検索回答・クライアント側・APIキー不要) ===== */
+.chat-launch{position:fixed;right:22px;bottom:24px;z-index:70;display:flex;align-items:center;gap:9px;background:var(--teal);color:#fff;border:none;cursor:pointer;padding:12px 18px 12px 13px;border-radius:999px;font-family:"Zen Maru Gothic";font-weight:700;font-size:.96rem;box-shadow:0 12px 28px rgba(62,138,150,.42);transition:transform .2s}
+.chat-launch:hover{transform:translateY(-3px)}
+.chat-launch .ava{width:30px;height:30px;border-radius:50%;background:#fff;display:grid;place-content:center;font-size:1.05rem}
+.chat-launch .pulse{position:absolute;top:-3px;right:-3px;width:13px;height:13px;background:var(--coral);border-radius:50%;border:2px solid #fff;animation:bob 2s ease-in-out infinite}
+@media(max-width:860px){.chat-launch{bottom:74px;right:13px;padding:11px 15px}.chat-launch .label{display:none}}
+.chat-panel{position:fixed;right:22px;bottom:24px;z-index:80;width:372px;max-width:calc(100vw - 28px);height:566px;max-height:calc(100vh - 40px);background:#fff;border-radius:24px;box-shadow:0 26px 64px rgba(74,64,54,.32);display:flex;flex-direction:column;overflow:hidden;opacity:0;transform:translateY(20px) scale(.98);pointer-events:none;transition:opacity .25s,transform .25s}
+.chat-panel.open{opacity:1;transform:none;pointer-events:auto}
+@media(max-width:860px){.chat-panel{right:8px;left:8px;bottom:8px;width:auto;height:calc(100vh - 16px)}}
+.chat-head{background:var(--teal);color:#fff;padding:15px 18px;display:flex;align-items:center;gap:12px}
+.chat-head .ava{width:40px;height:40px;border-radius:50%;background:#fff;display:grid;place-content:center;font-size:1.3rem;flex:none}
+.chat-head b{font-family:"Zen Maru Gothic";font-size:1rem;display:block;line-height:1.3}
+.chat-head .sub{font-size:.73rem;opacity:.92}
+.chat-head .x{margin-left:auto;background:rgba(255,255,255,.2);border:none;color:#fff;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:1.05rem;line-height:1}
+.chat-body{flex:1;overflow-y:auto;padding:18px 16px;background:var(--cream);display:flex;flex-direction:column;gap:12px}
+.msg{max-width:86%;padding:11px 15px;border-radius:18px;font-size:.92rem;line-height:1.75;white-space:pre-line}
+.msg.bot{background:#fff;color:var(--ink);align-self:flex-start;border-bottom-left-radius:6px;box-shadow:0 3px 10px rgba(74,64,54,.07)}
+.msg.user{background:var(--teal);color:#fff;align-self:flex-end;border-bottom-right-radius:6px}
+.msg .src{display:inline-block;margin-top:8px;font-size:.7rem;color:var(--ink-soft);background:var(--cream-deep);border-radius:999px;padding:.15em .85em}
+.msg .ina{display:inline-flex;align-items:center;margin-top:10px;margin-right:6px;gap:.3em;background:var(--coral);color:#fff;font-family:"Zen Maru Gothic";font-weight:700;font-size:.82rem;padding:.5em 1em;border-radius:999px;text-decoration:none}
+.msg .ina.line{background:#06C755}
+.typing{align-self:flex-start;background:#fff;border-radius:18px;padding:13px 16px;box-shadow:0 3px 10px rgba(74,64,54,.07);display:flex;gap:5px}
+.typing span{width:7px;height:7px;border-radius:50%;background:var(--teal-light);animation:blink 1.2s infinite}
+.typing span:nth-child(2){animation-delay:.2s}.typing span:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,60%,100%{opacity:.3}30%{opacity:1}}
+.chat-chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 10px;background:var(--cream)}
+.chat-chips button{background:#fff;border:1px solid var(--cream-deep);color:var(--teal);font-family:"Zen Maru Gothic";font-weight:700;font-size:.79rem;padding:.45em 1em;border-radius:999px;cursor:pointer;transition:background .15s}
+.chat-chips button:hover{background:var(--sky)}
+.chat-input{display:flex;gap:8px;padding:11px 12px;border-top:1px solid var(--cream-deep);background:#fff}
+.chat-input input{flex:1;border:1.5px solid var(--cream-deep);border-radius:999px;padding:.6em 1em;font-family:inherit;font-size:.92rem;outline:none}
+.chat-input input:focus{border-color:var(--teal-light)}
+.chat-input button{background:var(--teal);color:#fff;border:none;width:42px;height:42px;border-radius:50%;cursor:pointer;font-size:1.05rem;flex:none}
+.chat-note{font-size:.66rem;color:var(--ink-soft);text-align:center;padding:0 12px 9px;background:#fff;line-height:1.5}
+
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
   .reveal{opacity:1;transform:none}
@@ -297,8 +331,11 @@ footer small{opacity:.6;font-size:.78rem;display:block;margin-top:20px;line-heig
 <section class="hero" id="top">
   <div class="hero-slider" id="slider">
     <div class="slide is-active" data-bg="assets/photos/kvbg.png"><div class="kb"></div></div>
+    <div class="slide" data-bg="assets/photos/staff_costume.jpg"><div class="kb"></div></div>
     <div class="slide" data-bg="assets/photos/571aa6d8-fa3e-4b47-8edc-5038ca798599-1.jpg"><div class="kb"></div></div>
+    <div class="slide" data-bg="assets/photos/staff_apron4.jpg"><div class="kb"></div></div>
     <div class="slide" data-bg="assets/photos/img_9525.jpg"><div class="kb"></div></div>
+    <div class="slide" data-bg="assets/photos/staff_apron3.jpg"><div class="kb"></div></div>
     <div class="slide" data-bg="assets/photos/img_9206.jpg"><div class="kb"></div></div>
   </div>
   <div class="hero-scrim"></div>
@@ -521,6 +558,25 @@ footer small{opacity:.6;font-size:.78rem;display:block;margin-top:20px;line-heig
   </div>
 </footer>
 
+<!-- AI chat (demo: RAG over園 docs) -->
+<button class="chat-launch" id="chatLaunch" aria-label="AIガイドに質問する">
+  <span class="ava">🌳</span><span class="label">AIに質問</span><span class="pulse"></span>
+</button>
+<div class="chat-panel" id="chatPanel" role="dialog" aria-label="ほいくの森 AIガイド">
+  <div class="chat-head">
+    <span class="ava">🌳</span>
+    <div><b>ほいくの森 AIガイド</b><span class="sub">園の情報をもとにお答えします</span></div>
+    <button class="x" id="chatClose" aria-label="閉じる">✕</button>
+  </div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chat-chips" id="chatChips"></div>
+  <div class="chat-input">
+    <input id="chatInput" type="text" placeholder="例：送迎バスは来ますか？" autocomplete="off">
+    <button id="chatSend" aria-label="送信">➤</button>
+  </div>
+  <div class="chat-note">＊これはデモです。AIが園の公開情報をもとに回答します。正確な内容は最終的にお電話でご確認ください。</div>
+</div>
+
 <!-- mobile sticky CTA -->
 <div class="sticky-cta">
   <a class="btn btn-line" href="#steps">💬 LINE相談</a>
@@ -589,6 +645,77 @@ footer small{opacity:.6;font-size:.78rem;display:block;margin-top:20px;line-heig
   window.addEventListener('scroll',function(){
     hd.classList.toggle('scrolled',window.scrollY>20);
   },{passive:true});
+})();
+</script>
+
+<script>
+/* ===== AI chat demo: 園ドキュメントからの検索回答（RAGの考え方を再現／APIキー不要） ===== */
+(function(){
+  var KB=[
+    {k:['見学','予約','申し込み','申込','体験','見たい','行きたい','参加'],t:'見学・入園のながれ',
+     a:'見学はいつでも歓迎です。1組ずつ・所要30分ほどで、普段の保育の様子をご覧いただけます。お子さま連れで大丈夫です。\nご予約はお電話（0157-36-2862／平日9:00〜17:00）かLINEからどうぞ。その場で入園を決める必要はありません。',
+     cta:[{t:'見学を予約',href:'#steps'},{t:'LINEで相談',href:'#steps',line:true}]},
+    {k:['送迎','バス','遠い','遠方','通える','ルート','コース','送り迎え','光葉','上仁頃','相内','市街','距離'],t:'送迎エリア',
+     a:'送迎バスを4コース運行しています（光葉町・上仁頃・相内町・市街地方面など）。最長40分ほどのエリアまで、ご自宅近くまでお迎えにあがるコースもあります。\n北見は冬の送り迎えが大変なので、遠方の方にも好評です。コース・空き状況は時期で変わるため、一度ご相談ください。',
+     cta:[{t:'送迎を相談する',href:'#steps'}]},
+    {k:['0歳','0さい','ゼロ歳','1歳','2歳','3歳','赤ちゃん','何歳','年齢','いくつから','乳児','小さい','対象'],t:'選ばれる理由（0〜2歳から）',
+     a:'認定こども園なので、0歳から就学前まで通えます。はじめての集団生活も、家庭的な雰囲気のなかでゆっくり慣れていけます。\n0〜2歳は枠が限られるため、早めの見学・ご相談がおすすめです。',
+     cta:[{t:'見学を予約',href:'#steps'}]},
+    {k:['費用','料金','保育料','いくら','お金','月謝','値段','無償'],t:'よくある質問',
+     a:'保育料は、お子さまの年齢・ご家庭の認定区分・時期によって変わります。正確な金額は個別にご案内していますので、お気軽にお問い合わせください。',
+     cta:[{t:'電話で聞く',href:'tel:0157-36-2862'}]},
+    {k:['場所','住所','どこ','地図','アクセス','行き方','駐車'],t:'アクセス',
+     a:'認定こども園 北見大谷幼稚園 ほいくの森\n〒099-0878 北海道北見市東相内町225-1\nTEL 0157-36-2862（平日9:00〜17:00）',
+     cta:[{t:'地図を見る',href:'#access'}]},
+    {k:['預かり','延長','共働き','働い','仕事','フルタイム','時間','何時'],t:'よくある質問',
+     a:'認定こども園として保育に対応しています。預かりの時間や利用条件はご家庭の認定区分によって変わりますので、働き方に合わせてご相談ください。',
+     cta:[{t:'相談する',href:'#steps'}]},
+    {k:['特色','特徴','どんな','教育','方針','自然','遊び','ダンス','仏教','給食','食事','メリット','強み','保育内容'],t:'選ばれる理由',
+     a:'ほいくの森の特色は、①広い園庭での自然遊び ②「なんで？」を大切にする探究やダンスなどの表現遊び ③仏さまの心・命を大切にする保育 ④給食 です。\n「やさしい子・えがおであそぶ子・げんきな子」を目指しています。',
+     cta:[{t:'見学で確かめる',href:'#steps'}]},
+    {k:['電話','でんわ','tel','連絡','問い合わせ','問合せ','コンタクト'],t:'アクセス',
+     a:'お電話：0157-36-2862（平日9:00〜17:00）\nLINEやInstagram（@kitamiotani）でもご連絡いただけます。',
+     cta:[{t:'電話する',href:'tel:0157-36-2862'},{t:'LINE',href:'#steps',line:true}]},
+    {k:['インスタ','instagram','sns','写真','ようす','様子','ブログ','普段'],t:'園のようす・お知らせ',
+     a:'日々のあそびや行事のようすは、Instagram（@kitamiotani）で発信しています。ぜひのぞいてみてください。',
+     cta:[{t:'Instagramを見る',href:'https://www.instagram.com/kitamiotani/'}]}
+  ];
+  var FALLBACK={t:null,a:'ごめんなさい、その内容はこの場でお答えしきれないかもしれません。\nお電話（0157-36-2862／平日9:00〜17:00）かLINEで直接おたずねください。見学のご予約も承っています。',
+    cta:[{t:'見学を予約',href:'#steps'},{t:'電話する',href:'tel:0157-36-2862'}]};
+  var CHIPS=['見学を予約したい','送迎バスは来る？','0歳から預けられる？','費用は？','場所・電話は？','園の特色は？'];
+
+  var panel=document.getElementById('chatPanel'),body=document.getElementById('chatBody'),chips=document.getElementById('chatChips'),input=document.getElementById('chatInput');
+  function norm(s){return (s||'').toLowerCase().replace(/[\s　・、。！？!?,.]/g,'')}
+  function retrieve(q){
+    var n=norm(q),best=null,score=0;
+    KB.forEach(function(e){var sc=0;e.k.forEach(function(kw){if(n.indexOf(norm(kw))>=0)sc++});if(sc>score){score=sc;best=e}});
+    return score>0?best:FALLBACK;
+  }
+  function el(tag,cls){var d=document.createElement(tag);if(cls)d.className=cls;return d}
+  function addUser(t){var m=el('div','msg user');m.textContent=t;body.appendChild(m);scroll()}
+  function addBot(e){
+    var m=el('div','msg bot');m.appendChild(document.createTextNode(e.a));
+    if(e.t){m.appendChild(document.createElement('br'));var s=el('span','src');s.textContent='出典: '+e.t;m.appendChild(s)}
+    (e.cta||[]).forEach(function(c){
+      m.appendChild(document.createElement('br'));
+      var a=el('a','ina'+(c.line?' line':''));a.href=c.href;a.textContent=(c.line?'💬 ':'')+c.t;
+      if(/^https?:/.test(c.href))a.target='_blank';
+      a.addEventListener('click',function(){if(c.href.charAt(0)==='#')close()});
+      m.appendChild(a);
+    });
+    body.appendChild(m);scroll();
+  }
+  function typing(){var t=el('div','typing');t.innerHTML='<span></span><span></span><span></span>';body.appendChild(t);scroll();return t}
+  function scroll(){body.scrollTop=body.scrollHeight}
+  function ask(q){addUser(q);var t=typing();setTimeout(function(){t.remove();addBot(retrieve(q))},620)}
+  function renderChips(){chips.innerHTML='';CHIPS.forEach(function(c){var b=document.createElement('button');b.textContent=c;b.addEventListener('click',function(){ask(c)});chips.appendChild(b)})}
+  function open(){panel.classList.add('open');if(!body.childElementCount){addBot({a:'こんにちは！ほいくの森のAIガイドです🌳\n見学・送迎・費用・対象年齢など、園のことをお答えします。下のボタンか、自由に入力してください。'});renderChips()}setTimeout(function(){input.focus()},200)}
+  function close(){panel.classList.remove('open')}
+  function send(){var v=input.value.trim();if(!v)return;input.value='';ask(v)}
+  document.getElementById('chatLaunch').addEventListener('click',function(){panel.classList.contains('open')?close():open()});
+  document.getElementById('chatClose').addEventListener('click',close);
+  document.getElementById('chatSend').addEventListener('click',send);
+  input.addEventListener('keydown',function(e){if(e.key==='Enter')send()});
 })();
 </script>
 
